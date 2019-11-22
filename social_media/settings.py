@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
     'blog',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -127,3 +129,8 @@ if DEBUG:
 STATICFILES_DIRS = (
         os.path.join(BASE_DIR, "static", "static"),
     )
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = 'accounts:login'

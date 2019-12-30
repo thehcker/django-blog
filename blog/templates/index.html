@@ -2,11 +2,11 @@
 {% block content %}
 	{% for post in posts %}
 	<article class="media content-section">
-		<a class="article-img" href="{% url 'blog:post_detail' post.id %}"><img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}"></a>
+		<a class="article-img" href="{% url 'blog:post_detail' post.id %}"><img style="width: 100px; height: 100px;" class="rounded-circle article-img" src="{{ post.author.profile.image.url }}"></a>
 		<div class="media-body">
 			<div class="article-metadata">
 				<a class="mr-2" href="{% url 'blog:user_posts' post.author.username %}">{{ post.author }}</a>
-				<small class="text-muted">{{ post.date_posted|date:'F d, Y' }}</small>
+				<small class="text-muted">{{ post.date_posted }}</small>
 			</div>
 			<h2><a class="article-title" href="{% url 'blog:post_detail' post.id %}">{{ post.title }}</a></h2>
 			<p class="article-content">{{ post.content }}</p>

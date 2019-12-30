@@ -3,7 +3,7 @@
 	<h2 class="mb-3">Posted By: {{ view.kwargs.username }} ({{ page_obj.paginator.count }})</h2>
 	{% for post in posts %}
 	<article class="media content-section">
-		<a class="article-img" href="{% url 'blog:post_detail' post.id %}"><img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}"></a>
+		<a class="article-img" href="{% url 'blog:post_detail' post.id %}"><img style="width: 100px; height: 100px;" class="rounded-circle article-img" src="{{ post.author.profile.image.url }}"></a>
 		<div class="media-body">
 			<div class="article-metadata">
 				<a class="mr-2" href="{% url 'blog:user_posts' post.author.username %}">{{ post.author }}</a>
